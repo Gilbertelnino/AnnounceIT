@@ -1,6 +1,8 @@
 # test result and badge
 
-<!-- [![Build Status](https://travis-ci.org/Gilbertelnino/AnnounceIT.svg?branch=develop)](https://travis-ci.org/Gilbertelnino/AnnounceIT) -->
+[![Build Status](https://travis-ci.org/Gilbertelnino/AnnounceIT.svg?branch=develop)](https://travis-ci.org/Gilbertelnino/AnnounceIT)
+[![Coverage Status](https://coveralls.io/repos/github/Gilbertelnino/AnnounceIT/badge.svg?branch=develop)](https://coveralls.io/github/Gilbertelnino/AnnounceIT?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a528e2bedb812f7a73d5/maintainability)](https://codeclimate.com/github/Gilbertelnino/AnnounceIT/maintainability)
 
 ## AnnounceIT
 
