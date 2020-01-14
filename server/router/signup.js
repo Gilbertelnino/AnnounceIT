@@ -1,10 +1,12 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 import newUser from '../helper/storage';
 import {signUpValidation} from '../helper/userValidation';
-import app from '..';
 
 const router = express.Router();
+dotenv.config();
 
 router.post('/',(req,res)=>{
     const user = newUser.find(us => us.email === req.body.email && us.email.length >= 1);
@@ -34,11 +36,19 @@ router.post('/',(req,res)=>{
                         message: error.details[0].message
                     });
                 } else{
-                    newUser.push(newUsers);
-                    res.status(201).json({
-                        message: 'User created successfully',
-                        data:{
-                            newUsers
+                    jwt.sign({newUsers},process.env.JWT_KEY,(err,token)=>{
+                        if(err){
+                            return res.status(400).json({
+                                error: err
+                            })
+                        } else{
+                            newUser.push(newUsers);
+                            res.status(201).json({
+                                message: 'User created successfully',
+                                data: {
+                                    token
+                                }
+                            })
                         }
                     })
                 }
