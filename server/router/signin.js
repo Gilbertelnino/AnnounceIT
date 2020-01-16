@@ -8,7 +8,7 @@ import {signInValidation} from '../helper/userValidation'
 const router = express.Router();
 dotenv.config();
 
-router.post('/',(req,res)=>{
+router.post('/',(req,res,next)=>{
     storage.find((user) => {
         if(user.email === req.body.email && user.email.length < 1){
             return res.status(404).json({
@@ -54,6 +54,7 @@ router.post('/',(req,res)=>{
             })
         }
     });
+    next();
 })
 
 

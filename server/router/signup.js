@@ -8,7 +8,7 @@ import {signUpValidation} from '../helper/userValidation';
 const router = express.Router();
 dotenv.config();
 
-router.post('/',(req,res)=>{
+router.post('/',(req,res,next)=>{
     const user = newUser.find(us => us.email === req.body.email && us.email.length >= 1);
     if(user){
         return res.status(409).json({
@@ -55,6 +55,7 @@ router.post('/',(req,res)=>{
             }
         })
     }
+    next();
 })
 
 export default router;

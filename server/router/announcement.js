@@ -1,14 +1,15 @@
 import express from 'express';
-import verifyToken from '../helper/verifyToken';
 import announcevalidation from '../helper/announceValidation';
 import announceStorage from '../helper/announcestr';
+import verifyToken from '../helper/verifyToken';
 
 const router = express.Router();
 
-router.post('/',verifyToken,(req,res)=>{
+router.post('/',verifyToken,(req,res,next)=>{
     const newAnnouncement = {
         id: announceStorage.length + 1,
         text: req.body.text,
+        status: req.body.status
     };
      const {error} = announcevalidation(newAnnouncement);
      if(error){
@@ -20,12 +21,14 @@ router.post('/',verifyToken,(req,res)=>{
          res.status(201).json({
              data:{
                  id:newAnnouncement.id,
+                 status: req.body.status,
                  text: req.body.text,
                  start_date: new Date(),
                  end_date: new Date().setFullYear(2020, 10, 14)
              }
          })
      }
+     next();
 });
 
 export default router;

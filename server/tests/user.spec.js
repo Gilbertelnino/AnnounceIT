@@ -34,31 +34,5 @@ describe('AnnounceIT test container',()=>{
 
         });
     }) 
-    describe('POST /api/v1/announcement',()=>{
-        it('should return 201 status if user create announcement successfully ',(done)=>{
-            chai
-            .request(app)
-            .post('/api/v1/announcement')
-            .send({text: 'hello world'})
-            .end((err,res)=>{
-                expect(err).to.be.null;
-                expect(res).to.have.status(201);
-                done();
-            });
-
-        });
-        it('should return 403 status if user did not provide a token in the header ',(done)=>{
-            chai
-            .request(app)
-            .post('/api/v1/announcement')
-            .send({text: 'hello world'})
-            .end((err,res)=>{
-                expect(err).to.be.null;
-                expect(res).to.have.status(403);
-                done();
-            });
-
-        });
-    }) 
     });
 });
