@@ -11,7 +11,7 @@ Since the rise of the internet, more people have switched their attention from s
 ## How our endpoint work
 
 First and foremost clone repository in your local machine:
-**git clone <https://github.com/Gilbertelnino/AnnounceIT.git>**
+`git clone <https://github.com/Gilbertelnino/AnnounceIT.git>`
 
 ## Installation
 
