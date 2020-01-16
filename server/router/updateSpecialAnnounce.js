@@ -5,7 +5,7 @@ import verifyToken from '../helper/verifyToken'
 
 const router = express.Router();
 
-router.patch('/api/v1/announcement/:id',verifyToken,(req,res,next)=>{
+router.patch('/api/v1/announcement/:id',verifyToken,(req,res)=>{
     const announceFound = announceStorage.find(ads => ads.id === parseInt(req.params.id));
     const {error} = announceValidation(announceFound);
     if(!announceFound){
@@ -28,7 +28,6 @@ router.patch('/api/v1/announcement/:id',verifyToken,(req,res,next)=>{
             }
         })
     }
-    next();
 })
 
 router.patch('/api/v1/announcement/:id/sold',verifyToken,(req,res)=>{
