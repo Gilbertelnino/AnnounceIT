@@ -1,17 +1,16 @@
-// import express from 'express';
-// import announceStorage from '../helper/announcestr';
+import express from 'express';
+import announceStorage from '../helper/announcestr';
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.get('/',(req,res,next)=>{
-//      res.status(200).json({
-//          data: {
-//              status: req.query,
-//              announceStorage
-//          }
-//      });
-//      next();
-// })
+router.get('/',(req,res,next)=>{
+     res.status(200).json({
+         data: {
+             announceStorage
+         }
+     });
+     next();
+})
 
 
 
