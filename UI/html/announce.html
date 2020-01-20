@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../icons asset/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Add Announce | AnnounceIT</title>
+</head>
+<body>
+    <header>
+        <div class="container container-nav">
+            <div class="announce-title">
+                <h1>AnnounceIT</h1>
+            </div>
+            <nav>
+                <i class="fas fa-bars toggle-menu" id="menu"></i>
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li class="exit-btn hide-desktop"><i class="fas fa-times"></i></li>
+                    <li><a href="./feeds.html">home</a></li>
+                    <li><a href="./announce.html">add announce</a></li>
+                    <li><a href="./admin.html">admin</a></li>
+                    <li class="profile-img"><a href="./profile.html" title="profile"><span><img src="../images/Cristiano_Ronaldo.jpg" alt="Cristiano_Ronaldo"></span></a></li>
+                    <li id="profile"><a href="./profile.html" >profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="container">
+        <form action="#" class="announce-form">
+            <input type="file" name="file" id="file">
+            <label for="title">Title</label>
+            <input type="text" name="text" required>
+            <label for="description">description</label>
+            <textarea name="description" cols="30" rows="10" required class="announce-description"></textarea>
+            <button class="submit-btn">Submit</button>
+        </form>
+    </section>
+    <script src="../javascript/index.js"></script>
+</body>
+</html>
